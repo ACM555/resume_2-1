@@ -1,7 +1,6 @@
 [build]
-# 强行命令 Zeabur 用 Python 环境来构建，别瞎猜静态网页了
 builder = "python"
 
 [start]
-# 告诉 Zeabur 启动后端的精确命令 (请根据你的实际情况微调)
-command = "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+# 使用 python -u -m 强制执行 uvicorn，并关闭日志缓冲
+command = "python -u -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
